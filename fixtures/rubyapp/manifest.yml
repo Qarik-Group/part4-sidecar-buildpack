@@ -13,4 +13,4 @@ applications:
   - name: config-server
     process_types:
     - web
-    command: './config-server'
+    command: /home/vcap/deps/0/config-server
