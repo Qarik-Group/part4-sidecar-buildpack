@@ -16,7 +16,7 @@ dependencies:
 - name: config-server
   version: 0.0.0
   uri: https://s3.amazonaws.com/sample1-sidecar-buildpack/config-server-sidecar/config-server-v0.0.0.tar.xz
-  sha256: c10ce25818c621719172cb89e1ef2f7f296f20e70b3a772c1d74c715e8c8e95b
+  sha256: a395a6df2a2ef8f06e8f0afec0cc16cb3fa40ab4d1dbfe29bf32d70aab6a760a
   cf_stacks:
   - cflinuxfs2
   - cflinuxfs3
