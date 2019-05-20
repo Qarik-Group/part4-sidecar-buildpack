@@ -43,7 +43,14 @@ type Supplier struct {
 func (s *Supplier) Run() error {
 	s.Log.BeginStep("Supplying sample3-sidecar")
 
-	// TODO: Install any dependencies here...
+	configServer, err := s.Manifest.DefaultVersion("config-server")
+	if err != nil {
+		return err
+	}
+	s.Log.Info("Using config-server version %s", configServer.Version)
 
+	if err := s.Installer.InstallDependency(configServer, s.Stager.DepDir()); err != nil {
+		return err
+	}
 	return nil
 }
