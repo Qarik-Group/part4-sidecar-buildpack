@@ -15,18 +15,21 @@ version=$(cat VERSION)
 BUCKET=${BUCKET:-sample1-sidecar-buildpack}
 
 echo "Building config-server-v${version}.tar.xz"
-
 cd src/config-server-sidecar
 GOOS=linux GOARCH=amd64 go build -o config-server .
+cd -
 
-tar cfJ config-server-v${version}.tar.xz config-server
+output_dir=$(mktemp -d -t buildpackXXX)
+mkdir -p $output_dir/bin
+mv src/config-server-sidecar/config-server $output_dir/bin/
+tar -cJ -C $output_dir -f config-server-v${version}.tar.xz .
 
 
 echo "Uploading to s3://${BUCKET}/config-server-sidecar/"
 aws s3 cp config-server-v${version}.tar.xz s3://${BUCKET}/config-server-sidecar/
 
 sha256=$(sha256sum "config-server-v${version}.tar.xz" | awk '{print $1}')
-rm config-server*
+rm config-server*tar.xz
 
 downloadurl="https://s3.amazonaws.com/${BUCKET}/config-server-sidecar/config-server-v${version}.tar.xz"
 
