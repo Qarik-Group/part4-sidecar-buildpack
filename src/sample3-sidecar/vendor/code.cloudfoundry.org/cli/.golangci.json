@@ -1,0 +1,100 @@
+{
+  "run":{
+    "concurrency": 4,
+    "deadline": "3m",
+    "build-tags": ["V7"],
+    "skip-dirs": [
+      "^cf",
+      "^ci",
+      "^doc",
+      "^fixtures",
+      "^i18n",
+      "^plugin",
+      "^vendor",
+      "^actor/cfnetworkingaction",
+      "^actor/pluginaction",
+      "^actor/pushaction",
+      "^actor/v2.*",
+      "^actor/v3.*",
+      "^api/cloudcontroller/ccv2",
+      "^api/plugin",
+      "^api/router",
+      "^command/plugin",
+      "^command/v6",
+      "^integration/assets",
+      "^integration/v6",
+      "^util/generic",
+      "^util/manifest",
+      ".*fake.*"
+    ],
+    "skip-files": [
+      "command/v7/shared/noaa_debug_printer.go",
+      "integration/helpers/fake_server.go"
+    ]
+  },
+  "linters":{
+    "disable-all": true,
+    "enable": [
+      "errcheck",
+      "unused",
+      "gosimple",
+      "structcheck",
+      "varcheck",
+      "ineffassign",
+      "deadcode",
+      "typecheck",
+      "interfacer",
+      "goconst",
+      "unconvert",
+      "depguard",
+      "misspell",
+      "gochecknoinits",
+      "gocritic",
+      "staticcheck"
+    ]
+  },
+  "linters-settings": {
+    "errcheck":{
+      "check-blank": true
+    },
+    "goconst":{
+      "min-len": "2",
+      "min-occurrences": 3
+    },
+    "misspell": {
+      "locale": "US"
+    }
+  },
+  "issues":{
+    "max-same-issue": 0,
+    "exclude":[
+      "Error return value of `client.GetApplicationTasks` is not checked",
+      "Error return value of `logger.output.Stop` is not checked",
+      "Error return value of `request.ResetBody` is not checked",
+      "Error return value of `GinkgoWriter.Write` is not checked",
+      "Error return value of `c.terminalHelper.RestoreTerminal` is not checked",
+
+      "U1000: field `allproxy` is unused",
+      "U1000: field `dockerPassword` is unused",
+      "U1000: field `envCFStagingTimeout` is unused",
+      "U1000: field `envCFStartupTimeout` is unused",
+      "U1000: field `relatedCommands` is unused",
+      "U1000: field `usage` is unused",
+
+      "`allproxy` is unused",
+      "`dockerPassword` is unused",
+      "`envCFStagingTimeout` is unused",
+      "`envCFStartupTimeout` is unused",
+      "`relatedCommands` is unused",
+      "`usage` is unused"
+    ],
+    "exclude-rules":[
+      {
+        "path": "_test.go",
+        "linters": [
+          "goconst"
+        ]
+      }
+    ]
+  }
+}

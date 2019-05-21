@@ -9,7 +9,15 @@ required = ["github.com/google/subcommands"]
 
 [[constraint]]
 name = "github.com/cloudfoundry/libbuildpack"
-branch = "master"
+# branch = "master"
+branch = "v3push-and-confirm"
+source = "github.com/drnic/libbuildpack"
+
+[[override]]
+name = "code.cloudfoundry.org/cli"
+# branch = "master"
+branch = "manifest-sidecars"
+source = "github.com/drnic/cli"
 
 [[constraint]]
 name = "github.com/onsi/ginkgo"

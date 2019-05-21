@@ -19,10 +19,11 @@ var _ = Describe("Simple Integration Test", func() {
 	})
 
 	// TODO This test is pending because it currently fails. It is just an example
-	PIt("app deploys", func() {
-		app = cutlass.New(filepath.Join(bpDir, "fixtures", "simple_test"))
-		app.Buildpacks = []string{"sample3-sidecar_buildpack"}
-		PushAppAndConfirm(app)
-		Expect(app.GetBody("/")).To(ContainSubstring("Something on your website"))
+	It("app deploys", func() {
+		app = cutlass.New(filepath.Join(bpDir, "fixtures", "rubyapp"))
+		app.Manifest = filepath.Join(bpDir, "fixtures", "rubyapp", "manifest.system.yml")
+		V3PushAppAndConfirm(app)
+		Expect(app.GetBody("/")).To(ContainSubstring("Hi, I'm an app with a sidecar!"))
+		Expect(app.GetBody("/config")).To(ContainSubstring(`{"some-service.admin": "not-a-real-p4$$w0rd"}`))
 	})
 })

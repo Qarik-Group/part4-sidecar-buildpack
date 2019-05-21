@@ -2,6 +2,26 @@
 
 
 [[projects]]
+  branch = "master"
+  digest = "1:23ea7327e52e14b2b0eff80a8a4b9fa522922079e5afa4b969b8ca0ad182c3a1"
+  name = "code.cloudfoundry.org/bytefmt"
+  packages = ["."]
+  pruneopts = ""
+  revision = "2aa6f33b730c79971cfc3c742f279195b0abc627"
+
+[[projects]]
+  branch = "manifest-sidecars"
+  digest = "1:f5445c4f8d599f420ee72a1e50b08be95731ade2d11727cd5f284868ae5f060d"
+  name = "code.cloudfoundry.org/cli"
+  packages = [
+    "types",
+    "util/manifest",
+  ]
+  pruneopts = ""
+  revision = "23ec1dc23c3a2db087bf8bf9979e5f809290ff87"
+  source = "github.com/drnic/cli"
+
+[[projects]]
   digest = "1:b856d8248663c39265a764561c1a1a149783f6cc815feb54a1f3a591b91f6eca"
   name = "github.com/Masterminds/semver"
   packages = ["."]
@@ -18,8 +38,44 @@
   version = "v3.6.1"
 
 [[projects]]
+  digest = "1:d0cc4a5bd7f183727fa68f58cb969413aaf6cbb8824c36b4fdbd729a4e98c937"
+  name = "github.com/bmatcuk/doublestar"
+  packages = ["."]
+  pruneopts = ""
+  revision = "85a78806aa1b4707d1dbace9be592cf1ece91ab3"
+  version = "v1.1.1"
+
+[[projects]]
   branch = "master"
-  digest = "1:57f01f70d52e7569ed15fa5354d0436a122abb6a64462f0e1881e69fac92105c"
+  digest = "1:94c865fcab9201eee1bd7bf9423ca056f982871264332c669fcf2e25bb2392cb"
+  name = "github.com/charlievieth/fs"
+  packages = ["."]
+  pruneopts = ""
+  revision = "7dc373669fa10ddf827c37c595dee30a2f001be9"
+
+[[projects]]
+  digest = "1:fa19a17599e0ff0ca7b00a53377fcd3933593255708b9fe275accbbf165cb066"
+  name = "github.com/cloudfoundry/bosh-cli"
+  packages = ["director/template"]
+  pruneopts = ""
+  revision = "712bfd7271b478ba03c3f604339e2eefbec4647c"
+  version = "v3.0.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:9d588d69803e96aa9d95799fa2ca87af07ceb3eac8575b81f76e2117a01538a7"
+  name = "github.com/cloudfoundry/bosh-utils"
+  packages = [
+    "errors",
+    "logger",
+    "system",
+  ]
+  pruneopts = ""
+  revision = "9f9df32d41c36d11fc722430c49f403eb0884985"
+
+[[projects]]
+  branch = "v3push-and-confirm"
+  digest = "1:6fd5a2e9b84079d426785724465914874e75c81320c68d806a740169db67acb9"
   name = "github.com/cloudfoundry/libbuildpack"
   packages = [
     ".",
@@ -27,7 +83,16 @@
     "packager",
   ]
   pruneopts = ""
-  revision = "1a939ef723cea84764d0d0ad06d31518d8752b96"
+  revision = "b9bb9f966d644c05e5168900b2a31be7a3db62ef"
+  source = "github.com/drnic/libbuildpack"
+
+[[projects]]
+  digest = "1:2b508b111ea77918c2c49dd6e3d8286100b7c84a77e9504f89806bd3cb567dee"
+  name = "github.com/cppforlife/go-patch"
+  packages = ["patch"]
+  pruneopts = ""
+  revision = "90228d47281247384683e5fded0f15afa3e5d29a"
+  version = "v0.2.0"
 
 [[projects]]
   digest = "1:7ce300e943482aff885b3318c1c6a609827f43e3ba26a073380d5ba6143a0c48"
@@ -37,12 +102,12 @@
   revision = "aacba83f36a55ac31cbb71c06547a328c0cd1604"
 
 [[projects]]
-  branch = "master"
-  digest = "1:b264547c40314ec7619d2cf264e2621953843be7242c140efe1e3119f93877f4"
+  digest = "1:9565826757d815638581d6e3a2704b64400928ef9cba84c3cb21b2dc93eca4d5"
   name = "github.com/google/subcommands"
   packages = ["."]
   pruneopts = ""
-  revision = "5bae204cdfb2d92dcc333d56014bae6a2f6c58b1"
+  revision = "d47216cd17848d55a33e6f651cbe408243ed55b8"
+  version = "1.0.1"
 
 [[projects]]
   digest = "1:b3c5b95e56c06f5aa72cb2500e6ee5f44fcd122872d4fec2023a488e561218bc"
@@ -87,7 +152,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:90af6c59c7e17738c1917d53e86ef0fde72323030d089f6e25bf454c78f149c8"
+  digest = "1:2bbacd96230abd8a2a158170d9a110289105798a2a496bfc63615de9810433e7"
   name = "github.com/onsi/gomega"
   packages = [
     ".",
@@ -104,7 +169,7 @@
     "types",
   ]
   pruneopts = ""
-  revision = "41e1b266d4db87b96d24c04bcbfe392475748fec"
+  revision = "efe19c39ca106ee4ed42a1b25e1a80a53be4831a"
 
 [[projects]]
   digest = "1:eade4ea6782f5eed4a6b3138a648f9a332900650804fd206e5daaf99cc5613ea"
@@ -132,7 +197,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:aa38821ad1406a84f9577465ef53e56ca4d90745a710c753190bf7792d726c82"
+  digest = "1:c7da5579c766c6c7f70fb5c0ca8062114e7fcb6bb6b2cb163152a2ec9cec1846"
   name = "golang.org/x/net"
   packages = [
     "html",
@@ -140,15 +205,15 @@
     "html/charset",
   ]
   pruneopts = ""
-  revision = "3ec19112720433827bbce8be9342797f5a6aaaf9"
+  revision = "018c4d40a106a7ae83689758294fcd8d23850745"
 
 [[projects]]
   branch = "master"
-  digest = "1:677902b7cbbfa124deba62fc56aaa9ec7ad76ab7c45d42f76c973d3e7a1ef109"
+  digest = "1:f8fc28f6666a22fb927b5a600299968203845989eba90b977525f3dcf37afd7e"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = ""
-  revision = "61b9204099cb1bebc803c9ffb9b2d3acd9d457d9"
+  revision = "c432e742b0af385916e013f6a34e9e73d139cf82"
 
 [[projects]]
   digest = "1:740b51a55815493a8d0f2b1e0d0ae48fe48953bf7eaf3fcc4198823bf67768c0"
