@@ -429,9 +429,6 @@ func (a *App) V3ApplyManifest() error {
 		return err
 	}
 
-	data, _ := ioutil.ReadFile(tmpManifestFile.Name())
-	fmt.Println(string(data))
-
 	args := []string{"v3-apply-manifest", "-f", tmpManifestFile.Name()}
 	command := exec.Command("cf", args...)
 	command.Stdout = DefaultStdoutStderr
