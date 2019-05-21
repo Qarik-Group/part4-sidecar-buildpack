@@ -75,7 +75,7 @@
 
 [[projects]]
   branch = "v3push-and-confirm"
-  digest = "1:6fd5a2e9b84079d426785724465914874e75c81320c68d806a740169db67acb9"
+  digest = "1:aaa4f5a75262cf679fb729142f67dcb29c820ce0fd1fcfa7df23f68e32eecb7c"
   name = "github.com/cloudfoundry/libbuildpack"
   packages = [
     ".",
@@ -83,7 +83,7 @@
     "packager",
   ]
   pruneopts = ""
-  revision = "b9bb9f966d644c05e5168900b2a31be7a3db62ef"
+  revision = "22192da06b2276de1b34885121e13073936bcd36"
   source = "github.com/drnic/libbuildpack"
 
 [[projects]]
