@@ -3,11 +3,9 @@ package cutlass
 import (
 	"crypto/tls"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
-	"log"
 	"math/rand"
 	"net/http"
 	"os"
@@ -407,7 +405,7 @@ func (a *App) V3CreateApp() error {
 func (a *App) V3ApplyManifest() error {
 	// load a.Manifest, modify app name, save tmp file and use that
 	if a.Manifest == "" {
-		return errors.New("Must set a.Manifest to path of manifest")
+		return fmt.Errorf("Must set a.Manifest to path of manifest")
 	}
 	apps, err := manifest.ReadAndInterpolateManifest(a.Manifest, nil, nil)
 	if err != nil {
@@ -420,7 +418,7 @@ func (a *App) V3ApplyManifest() error {
 
 	tmpManifestFile, err := ioutil.TempFile(os.TempDir(), "manifest-*.yml")
 	if err != nil {
-		log.Fatal("Cannot create temporary file", err)
+		return nil
 	}
 	defer os.Remove(tmpManifestFile.Name())
 
